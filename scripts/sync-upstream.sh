@@ -9,7 +9,8 @@ set -e
 ###########################
 # Configuration
 DEBUG=true  # Set to true to enable debug output
-PROTECT_LIST="scripts/git-protect.list"  # Path to the protected files list
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)  # Resolve script's directory
+PROTECT_LIST="$SCRIPT_DIR/git-protect.list"  # Path to the protected files list
 ###########################
 
 UPSTREAM_BRANCH="$1"
